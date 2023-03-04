@@ -22,3 +22,14 @@ class Queue:
             # обновление "хвоста"
             self.tail.next_node = node
             self.tail = node
+
+    def dequeue(self):
+        """Удаляет из очереди крайний левый элемент (первый добавленный)"""
+        if self.head is None:
+            return None
+        # удаляемое значение
+        deq_element = self.head
+        # обновлени "хвоста"
+        self.head = self.head.next_node
+
+        return deq_element.data
